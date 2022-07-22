@@ -5,19 +5,22 @@ import  calculateWinner  from "./winner";
 import History from "./components/History";
 import Statusmessage from "./components/Statusmessage";
 
+
+const NEW_GAME = [{ board: Array(9).fill(null), isXNext: true}];
+
 const App = () => {
 
   // const [board, setBoard] = useState(Array(9).fill(null));
   // const [isXNext, setIsXNext] = useState(false);
   //               modified to
 
-    const [history, setHistory] = useState([{ board: Array(9).fill(null), isXNext: true}]);
+    const [history, setHistory] = useState(NEW_GAME);
     const [currentMove, setCurrentMove] = useState(0);  // index inside the history array to keep track of the curr move 
     const current = history[currentMove];   // current game state at this move
 
  // console.log(history);
 
-  const winner = calculateWinner(current.board);
+  const { winner, winningSquares } = calculateWinner(current.board);
 
   const onSquareClick = (position) =>{        //it is called when the square box is clicked
       // if winner is already there, return 
@@ -44,11 +47,17 @@ const App = () => {
     setCurrentMove(move);
   };
 
+  const restartBtn = () =>{
+    setHistory(NEW_GAME);
+    setCurrentMove(0);
+  }
+
   return (
     <div className="app">
     <h1>Welcome to Tic-Tac-Toe Game!</h1>
     <Statusmessage winner={winner} current={current} />
-    <Board board={current.board} onSquareClick={onSquareClick} />
+    <Board board={current.board} onSquareClick={onSquareClick} winningSquares={winningSquares} />
+    <button onClick={restartBtn}>Restart Game</button>
     <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
   );

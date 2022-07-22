@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Square from './Square';
 
-const Board = ({board, onSquareClick}) => {
+const Board = ({ board, onSquareClick, winningSquares }) => {
    
 
     const renderSquare = (position)=>{          // this function returns the square component when called
+       const isWinningSquare = winningSquares.includes(position); 
         return(
             <Square value={board[position]} onClick={ ()=>{         // this is the js syntax to 
                 onSquareClick(position);                                    // pass predefined func inside onClick event
-            }} />
+            }} isWinningSquare={isWinningSquare} />
         )
     }
 
