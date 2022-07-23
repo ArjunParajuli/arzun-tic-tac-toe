@@ -9,7 +9,8 @@ const History = ({ history, moveTo, currentMove }) => {
            return( 
             <li
         style={{color: (move === currentMove) ? 'red' : 'rgb(45, 41, 49)', 
-            backgroundColor: (move === currentMove) ? 'white' : 'rgb(45, 41, 49)' }}
+            backgroundColor: (move === currentMove) ? 'white' : '' }}
+     
             key={move}>
             <button onClick={ ()=>{
                     moveTo(move);

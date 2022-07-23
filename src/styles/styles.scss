@@ -4,7 +4,7 @@ $blue: #4c43d4;
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(45, 41, 49);
+    background-color: rgb(90, 115, 121);
     color: rgb(224, 215, 215);
     padding: 0;
     margin: 0;
@@ -31,6 +31,14 @@ body {
     color: $green;
   }
   
+  .text-red {
+    color: red;
+  }
+
+  .text-blue {
+    color: $blue;
+  }
+
   .text-orange {
     color: $orange;
   }
@@ -152,7 +160,7 @@ body {
     }
   
     &:before {
-      background-color: $orange;
+      background-color: red;
       right: -75px;
       bottom: -75px;
       @media screen and (min-width: 476px) {
@@ -164,7 +172,7 @@ body {
     }
   
     &:after {
-      background-color: $green;
+      background-color: blue;
       top: -75px;
       left: -75px;
       @media screen and (min-width: 476px) {

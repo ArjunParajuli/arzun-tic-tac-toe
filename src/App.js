@@ -54,11 +54,13 @@ const App = () => {
 
   return (
     <div className="app">
-    <h1>Welcome to Tic-Tac-Toe Game!</h1>
+    <h1>Welcome to <span className="text-red">Tic-Tac-Toe</span> Game!</h1>
     <Statusmessage winner={winner} current={current} />
     <Board board={current.board} onSquareClick={onSquareClick} winningSquares={winningSquares} />
-    <button onClick={restartBtn}>Restart Game</button>
+    <button onClick={restartBtn} className={`btn-reset ${winner ? 'active' : '' }`}>Restart Game</button>
+    <h2>Game History</h2>
     <History history={history} moveTo={moveTo} currentMove={currentMove} />
+    <div className="bg-balls"></div>
     </div>
   );
 };

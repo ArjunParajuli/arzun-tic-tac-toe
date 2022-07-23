@@ -8,14 +8,20 @@ const Statusmessage = ({ winner, current }) =>{
 const noMovesLeft = current.board.every(elm => elm !== null);
 
 return(
-        <h2>
+        <div className="status-message">
               {/* when we have a winner  */}
-             { winner && ` Player ${winner} is the winner ` }   
+             { winner &&  <>
+               <span className={winner === 'X' ? 'text-green' : 'text-orange' }>{winner}  is the Winner</span>
+             </>  }   
              {/*if we dont have a winner yet */}
-             { !winner && !noMovesLeft && ` Player ${current.isXNext? 'X' : 'O' }'s turn ` } 
+              {/* Player ${current.isXNext? 'X' : 'O' }'s turn  */}
+             { !winner && !noMovesLeft && <>
+               <span>Player {current.isXNext? 'X' : 'O' }'s turn </span>
+             </>  } 
              {/* if we dont hav winner and all squares filled */}
-             { !winner && noMovesLeft && " The game is tied" }
-        </h2>
+             { !winner && noMovesLeft && <>
+             <span className="text-green">X</span> And <span className="text-orange">O</span> tied</> }
+        </div>
     );
 };
 
