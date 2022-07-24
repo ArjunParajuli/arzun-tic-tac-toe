@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/arzun-tic-tac-toe/static/css/main.b57a2701.css",
+    "main.js": "/arzun-tic-tac-toe/static/js/main.29ffb53f.js",
+    "static/js/787.6b0bed1b.chunk.js": "/arzun-tic-tac-toe/static/js/787.6b0bed1b.chunk.js",
+    "index.html": "/arzun-tic-tac-toe/index.html",
+    "main.b57a2701.css.map": "/arzun-tic-tac-toe/static/css/main.b57a2701.css.map",
+    "main.29ffb53f.js.map": "/arzun-tic-tac-toe/static/js/main.29ffb53f.js.map",
+    "787.6b0bed1b.chunk.js.map": "/arzun-tic-tac-toe/static/js/787.6b0bed1b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b57a2701.css",
+    "static/js/main.29ffb53f.js"
+  ]
+}
